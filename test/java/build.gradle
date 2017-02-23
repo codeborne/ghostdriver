@@ -62,6 +62,8 @@ dependencies {
     // Library under test (PhantomJS Driver, aka "PhantomJS WebDriver Java Binding")
     testCompile files("../../binding/java/jars/phantomjsdriver-${phantomjsdriverVersion}.jar")
     // testCompile "com.codeborne:phantomjsdriver:$phantomjsdriverVersion"
+
+    testCompile 'org.assertj:assertj-core:3.6.2'
 }
 
 tasks.withType(JavaExec) {
