@@ -35,12 +35,13 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.net.PortProber;
 import org.openqa.selenium.os.ExecutableFinder;
 import org.openqa.selenium.remote.service.DriverService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import static com.google.common.base.Preconditions.*;
 
@@ -57,7 +58,7 @@ public class PhantomJSDriverService extends DriverService {
     /**
      * Internal Logger
      */
-    private static final Logger LOG = Logger.getLogger(PhantomJSDriverService.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(PhantomJSDriverService.class.getName());
 
     /**
      * System property/capability that defines the location of the PhantomJS executable.
@@ -303,7 +304,7 @@ public class PhantomJSDriverService extends DriverService {
                         return capCollection.toArray(new String[capCollection.size()]);
                     } catch (Exception e) {
                         // If casting fails, log an error and assume no CLI arguments are provided
-                        LOG.warning(String.format(
+                        LOG.warn(String.format(
                                 "Unable to set Capability '%s' as it was neither a String[] or a Collection<String>",
                                 capabilityName));
                     }

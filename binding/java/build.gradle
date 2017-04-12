@@ -63,6 +63,7 @@ dependencies {
     ["selenium-api", "selenium-remote-driver"].each {
         compile "org.seleniumhq.selenium:$it:$seleniumVersion"
     }
+    compile "org.slf4j:slf4j-api:1.7.21"
 }
 
 compileJava {
